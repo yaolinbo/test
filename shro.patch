@@ -1,0 +1,959 @@
+diff --git a/sp01-commons/.classpath b/sp01-commons/.classpath
+new file mode 100644
+index 0000000..f376062
+--- /dev/null
++++ b/sp01-commons/.classpath
+@@ -0,0 +1,44 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="src" output="target/classes" path="src/main/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="test" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
++		<attributes>
++			<attribute name="maven.pomderived" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" path="target/generated-sources/annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
++		<attributes>
++			<attribute name="optional" value="true"/>
++			<attribute name="maven.pomderived" value="true"/>
++			<attribute name="ignore_optional_problems" value="true"/>
++			<attribute name="m2e-apt" value="true"/>
++			<attribute name="test" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="output" path="target/classes"/>
++</classpath>
+diff --git a/sp01-commons/.factorypath b/sp01-commons/.factorypath
+new file mode 100644
+index 0000000..a6b7b9f
+--- /dev/null
++++ b/sp01-commons/.factorypath
+@@ -0,0 +1,14 @@
++<factorypath>
++    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/module/jackson-module-parameter-names/2.9.8/jackson-module-parameter-names-2.9.8.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.9.8/jackson-datatype-jdk8-2.9.8.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.9.8/jackson-datatype-jsr310-2.9.8.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-guava/2.9.8/jackson-datatype-guava-2.9.8.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/com/google/guava/guava/18.0/guava-18.0.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar" enabled="true" runInBatchMode="false"/>
++    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar" enabled="true" runInBatchMode="false"/>
++</factorypath>
+diff --git a/sp01-commons/.gitignore b/sp01-commons/.gitignore
+new file mode 100644
+index 0000000..b83d222
+--- /dev/null
++++ b/sp01-commons/.gitignore
+@@ -0,0 +1 @@
++/target/
+diff --git a/sp01-commons/.project b/sp01-commons/.project
+new file mode 100644
+index 0000000..502002a
+--- /dev/null
++++ b/sp01-commons/.project
+@@ -0,0 +1,23 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>sp01-commons</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.m2e.core.maven2Builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.m2e.core.maven2Nature</nature>
++	</natures>
++</projectDescription>
+diff --git a/sp01-commons/.settings/org.eclipse.jdt.apt.core.prefs b/sp01-commons/.settings/org.eclipse.jdt.apt.core.prefs
+new file mode 100644
+index 0000000..8232f49
+--- /dev/null
++++ b/sp01-commons/.settings/org.eclipse.jdt.apt.core.prefs
+@@ -0,0 +1,4 @@
++eclipse.preferences.version=1
++org.eclipse.jdt.apt.aptEnabled=true
++org.eclipse.jdt.apt.genSrcDir=target\\generated-sources\\annotations
++org.eclipse.jdt.apt.genTestSrcDir=target\\generated-test-sources\\test-annotations
+diff --git a/sp01-commons/.settings/org.eclipse.jdt.core.prefs b/sp01-commons/.settings/org.eclipse.jdt.core.prefs
+new file mode 100644
+index 0000000..97f4599
+--- /dev/null
++++ b/sp01-commons/.settings/org.eclipse.jdt.core.prefs
+@@ -0,0 +1,7 @@
++eclipse.preferences.version=1
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
++org.eclipse.jdt.core.compiler.compliance=1.8
++org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
++org.eclipse.jdt.core.compiler.processAnnotations=enabled
++org.eclipse.jdt.core.compiler.release=disabled
++org.eclipse.jdt.core.compiler.source=1.8
+diff --git a/sp01-commons/.settings/org.eclipse.m2e.core.prefs b/sp01-commons/.settings/org.eclipse.m2e.core.prefs
+new file mode 100644
+index 0000000..14b697b
+--- /dev/null
++++ b/sp01-commons/.settings/org.eclipse.m2e.core.prefs
+@@ -0,0 +1,4 @@
++activeProfiles=
++eclipse.preferences.version=1
++resolveWorkspaceProjects=true
++version=1
+diff --git a/sp01-commons/pom.xml b/sp01-commons/pom.xml
+new file mode 100644
+index 0000000..b95f3ae
+--- /dev/null
++++ b/sp01-commons/pom.xml
+@@ -0,0 +1,67 @@
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++	<modelVersion>4.0.0</modelVersion>
++	<groupId>com.tedu</groupId>
++	<artifactId>sp01-commons</artifactId>
++	<version>0.0.1-SNAPSHOT</version>
++	<name>sp01-commons</name>
++	<dependencies>
++		<dependency>
++			<groupId>com.fasterxml.jackson.module</groupId>
++			<artifactId>jackson-module-parameter-names</artifactId>
++			<version>2.9.8</version>
++		</dependency>
++		<dependency>
++			<groupId>com.fasterxml.jackson.datatype</groupId>
++			<artifactId>jackson-datatype-jdk8</artifactId>
++			<version>2.9.8</version>
++		</dependency>
++		<dependency>
++			<groupId>com.fasterxml.jackson.datatype</groupId>
++			<artifactId>jackson-datatype-jsr310</artifactId>
++			<version>2.9.8</version>
++		</dependency>
++		<dependency>
++			<groupId>com.fasterxml.jackson.datatype</groupId>
++			<artifactId>jackson-datatype-guava</artifactId>
++			<version>2.9.8</version>
++		</dependency>
++
++		<dependency>
++			<groupId>org.projectlombok</groupId>
++			<artifactId>lombok</artifactId>
++			<version>1.18.6</version>
++		</dependency>
++		<dependency>
++			<groupId>javax.servlet</groupId>
++			<artifactId>javax.servlet-api</artifactId>
++			<version>3.1.0</version>
++		</dependency>
++		<dependency>
++			<groupId>org.slf4j</groupId>
++			<artifactId>slf4j-api</artifactId>
++			<version>1.7.26</version>
++		</dependency>
++		<dependency>
++		    <groupId>org.apache.commons</groupId>
++		    <artifactId>commons-lang3</artifactId>
++		    <version>3.9</version>
++		</dependency>
++
++	</dependencies>
++
++	<build>
++		<plugins>
++			<plugin>
++				<groupId>org.apache.maven.plugins</groupId>
++				<artifactId>maven-compiler-plugin</artifactId>
++				<version>3.8.0</version>
++				<configuration>
++					<source>1.8</source>
++					<target>1.8</target>
++				</configuration>
++			</plugin>
++		</plugins>
++	</build>
++</project>
+\ No newline at end of file
+diff --git a/sp01-commons/src/main/java/com/tedu/sp01/pojo/Item.java b/sp01-commons/src/main/java/com/tedu/sp01/pojo/Item.java
+new file mode 100644
+index 0000000..4d2e6d3
+--- /dev/null
++++ b/sp01-commons/src/main/java/com/tedu/sp01/pojo/Item.java
+@@ -0,0 +1,14 @@
++package com.tedu.sp01.pojo;
++
++import lombok.AllArgsConstructor;
++import lombok.Data;
++import lombok.NoArgsConstructor;
++
++@Data
++@NoArgsConstructor
++@AllArgsConstructor
++public class Item {
++	private Integer id;
++	private String name;
++	private Integer number;
++}
+\ No newline at end of file
+diff --git a/sp01-commons/src/main/java/com/tedu/sp01/pojo/Order.java b/sp01-commons/src/main/java/com/tedu/sp01/pojo/Order.java
+new file mode 100644
+index 0000000..db1c2ae
+--- /dev/null
++++ b/sp01-commons/src/main/java/com/tedu/sp01/pojo/Order.java
+@@ -0,0 +1,16 @@
++package com.tedu.sp01.pojo;
++
++import java.util.List;
++
++import lombok.AllArgsConstructor;
++import lombok.Data;
++import lombok.NoArgsConstructor;
++
++@Data
++@NoArgsConstructor
++@AllArgsConstructor
++public class Order {
++	private String id;
++	private User user;
++	private List<Item> items;
++}
+\ No newline at end of file
+diff --git a/sp01-commons/src/main/java/com/tedu/sp01/pojo/User.java b/sp01-commons/src/main/java/com/tedu/sp01/pojo/User.java
+new file mode 100644
+index 0000000..d080478
+--- /dev/null
++++ b/sp01-commons/src/main/java/com/tedu/sp01/pojo/User.java
+@@ -0,0 +1,14 @@
++package com.tedu.sp01.pojo;
++
++import lombok.AllArgsConstructor;
++import lombok.Data;
++import lombok.NoArgsConstructor;
++
++@Data
++@NoArgsConstructor
++@AllArgsConstructor
++public class User {
++	private Integer id;
++	private String username;
++	private String password;
++}
+\ No newline at end of file
+diff --git a/sp01-commons/src/main/java/com/tedu/sp01/service/ItemService.java b/sp01-commons/src/main/java/com/tedu/sp01/service/ItemService.java
+new file mode 100644
+index 0000000..da8cb1b
+--- /dev/null
++++ b/sp01-commons/src/main/java/com/tedu/sp01/service/ItemService.java
+@@ -0,0 +1,10 @@
++package com.tedu.sp01.service;
++
++import java.util.List;
++
++import com.tedu.sp01.pojo.Item;
++
++public interface ItemService {
++	List<Item> getItems(String orderId);
++	void decreaseNumbers(List<Item> list);
++}
+\ No newline at end of file
+diff --git a/sp01-commons/src/main/java/com/tedu/sp01/service/OrderService.java b/sp01-commons/src/main/java/com/tedu/sp01/service/OrderService.java
+new file mode 100644
+index 0000000..a77ab61
+--- /dev/null
++++ b/sp01-commons/src/main/java/com/tedu/sp01/service/OrderService.java
+@@ -0,0 +1,9 @@
++package com.tedu.sp01.service;
++
++
++import com.tedu.sp01.pojo.Order;
++
++public interface OrderService {
++	Order getOrder(String orderId);
++	void addOrder(Order order);
++}
+diff --git a/sp01-commons/src/main/java/com/tedu/sp01/service/UserService.java b/sp01-commons/src/main/java/com/tedu/sp01/service/UserService.java
+new file mode 100644
+index 0000000..8bdce1b
+--- /dev/null
++++ b/sp01-commons/src/main/java/com/tedu/sp01/service/UserService.java
+@@ -0,0 +1,8 @@
++package com.tedu.sp01.service;
++
++import com.tedu.sp01.pojo.User;
++
++public interface UserService {
++	User getUser(Integer id);
++	void addScore(Integer id, Integer score);
++}
+diff --git a/sp01-commons/src/main/java/com/tedu/web/util/CookieUtil.java b/sp01-commons/src/main/java/com/tedu/web/util/CookieUtil.java
+new file mode 100644
+index 0000000..4a1a9ba
+--- /dev/null
++++ b/sp01-commons/src/main/java/com/tedu/web/util/CookieUtil.java
+@@ -0,0 +1,62 @@
++package com.tedu.web.util;
++
++import javax.servlet.http.Cookie;
++import javax.servlet.http.HttpServletRequest;
++import javax.servlet.http.HttpServletResponse;
++
++public class CookieUtil {
++
++	/**
++	 * @param response
++	 * @param name
++	 * @param value
++	 * @param maxAge
++	 */
++	public static void setCookie(HttpServletResponse response,
++			String name, String value, String domain, String path, int maxAge) {
++		Cookie cookie = new Cookie(name, value);
++		if(domain != null) {
++			cookie.setDomain(domain);
++		}
++		cookie.setPath(path);
++		cookie.setMaxAge(maxAge);
++		response.addCookie(cookie);
++	}
++	public static void setCookie(HttpServletResponse response, String name, String value, int maxAge) {
++		setCookie(response, name, value, null, "/", maxAge);
++	}
++	public static void setCookie(HttpServletResponse response, String name, String value) {
++		setCookie(response, name, value, null, "/", 3600);
++	}
++	public static void setCookie(HttpServletResponse response, String name) {
++		setCookie(response, name, "", null, "/", 3600);
++	}
++
++	/**
++	 * @param request
++	 * @param name
++	 * @return
++	 */
++	public static String getCookie(HttpServletRequest request, String name) {
++		String value = null;
++		Cookie[] cookies = request.getCookies();
++		if (null != cookies) {
++			for (Cookie cookie : cookies) {
++				if (cookie.getName().equals(name)) {
++					value = cookie.getValue();
++				}
++			}
++		}
++		return value;
++	}
++
++	/**
++	 * @param response
++	 * @param name
++	 * @return
++	 */
++	public static void removeCookie(HttpServletResponse response, String name, String domain, String path) {
++		setCookie(response, name, "", domain, path, 0);
++	}
++
++}
+\ No newline at end of file
+diff --git a/sp01-commons/src/main/java/com/tedu/web/util/JsonResult.java b/sp01-commons/src/main/java/com/tedu/web/util/JsonResult.java
+new file mode 100644
+index 0000000..040b850
+--- /dev/null
++++ b/sp01-commons/src/main/java/com/tedu/web/util/JsonResult.java
+@@ -0,0 +1,92 @@
++package com.tedu.web.util;
++
++import lombok.Getter;
++import lombok.Setter;
++
++@Getter
++@Setter
++public class JsonResult<T> {
++	/** �ɹ� */
++	public static final int SUCCESS = 200;
++
++	/** û�е�¼ */
++	public static final int NOT_LOGIN = 400;
++
++	/** �����쳣 */
++	public static final int EXCEPTION = 401;
++
++	/** ϵͳ���� */
++	public static final int SYS_ERROR = 402;
++
++	/** �������� */
++	public static final int PARAMS_ERROR = 403;
++
++	/** ��֧�ֻ��Ѿ����� */
++	public static final int NOT_SUPPORTED = 410;
++
++	/** AuthCode���� */
++	public static final int INVALID_AUTHCODE = 444;
++
++	/** ̫Ƶ���ĵ��� */
++	public static final int TOO_FREQUENT = 445;
++
++	/** δ֪�Ĵ��� */
++	public static final int UNKNOWN_ERROR = 499;
++	
++	private int code;
++	private String msg;
++	private T data;
++	
++	
++
++	public static JsonResult build() {
++		return new JsonResult();
++	}
++	public static JsonResult build(int code) {
++		return new JsonResult().code(code);
++	}
++	public static JsonResult build(int code, String msg) {
++		return new JsonResult<String>().code(code).msg(msg);
++	}
++	public static <T> JsonResult<T> build(int code, T data) {
++		return new JsonResult<T>().code(code).data(data);
++	}
++	public static <T> JsonResult<T> build(int code, String msg, T data) {
++		return new JsonResult<T>().code(code).msg(msg).data(data);
++	}
++	
++	public JsonResult<T> code(int code) {
++		this.code = code;
++		return this;
++	}
++	public JsonResult<T> msg(String msg) {
++		this.msg = msg;
++		return this;
++	}
++	public JsonResult<T> data(T data) {
++		this.data = data;
++		return this;
++	}
++	
++	
++	public static JsonResult ok() {
++		return build(SUCCESS);
++	}
++	public static JsonResult ok(String msg) {
++		return build(SUCCESS, msg);
++	}
++	public static <T> JsonResult<T> ok(T data) {
++		return build(SUCCESS, data);
++	}
++	public static JsonResult err() {
++		return build(EXCEPTION);
++	}
++	public static JsonResult err(String msg) {
++		return build(EXCEPTION, msg);
++	}
++	
++	@Override
++	public String toString() {
++		return JsonUtil.to(this);
++	}
++}
+\ No newline at end of file
+diff --git a/sp01-commons/src/main/java/com/tedu/web/util/JsonUtil.java b/sp01-commons/src/main/java/com/tedu/web/util/JsonUtil.java
+new file mode 100644
+index 0000000..7d1fd06
+--- /dev/null
++++ b/sp01-commons/src/main/java/com/tedu/web/util/JsonUtil.java
+@@ -0,0 +1,460 @@
++package com.tedu.web.util;
++
++import java.io.File;
++import java.io.FileWriter;
++import java.io.IOException;
++import java.io.InputStream;
++import java.io.InputStreamReader;
++import java.io.Writer;
++import java.math.BigDecimal;
++import java.math.BigInteger;
++import java.net.URL;
++import java.nio.charset.StandardCharsets;
++import java.text.SimpleDateFormat;
++import java.util.ArrayList;
++import java.util.List;
++
++import org.apache.commons.lang3.StringUtils;
++
++import com.fasterxml.jackson.annotation.JsonInclude;
++import com.fasterxml.jackson.core.JsonGenerator;
++import com.fasterxml.jackson.core.JsonParser;
++import com.fasterxml.jackson.core.JsonProcessingException;
++import com.fasterxml.jackson.core.type.TypeReference;
++import com.fasterxml.jackson.databind.DeserializationFeature;
++import com.fasterxml.jackson.databind.JsonNode;
++import com.fasterxml.jackson.databind.ObjectMapper;
++import com.fasterxml.jackson.databind.SerializationFeature;
++import com.fasterxml.jackson.databind.node.ObjectNode;
++import com.fasterxml.jackson.datatype.guava.GuavaModule;
++import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
++import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
++import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
++
++import lombok.extern.slf4j.Slf4j;
++
++@Slf4j
++public class JsonUtil {
++    private static ObjectMapper mapper;
++    private static JsonInclude.Include DEFAULT_PROPERTY_INCLUSION = JsonInclude.Include.NON_DEFAULT;
++    private static boolean IS_ENABLE_INDENT_OUTPUT = false;
++    private static String CSV_DEFAULT_COLUMN_SEPARATOR = ",";
++    static {
++        try {
++            initMapper();
++            configPropertyInclusion();
++            configIndentOutput();
++            configCommon();
++        } catch (Exception e) {
++            log.error("jackson config error", e);
++        }
++    }
++
++    private static void initMapper() {
++        mapper = new ObjectMapper();
++    }
++
++    private static void configCommon() {
++        config(mapper);
++    }
++
++    private static void configPropertyInclusion() {
++        mapper.setSerializationInclusion(DEFAULT_PROPERTY_INCLUSION);
++    }
++
++    private static void configIndentOutput() {
++        mapper.configure(SerializationFeature.INDENT_OUTPUT, IS_ENABLE_INDENT_OUTPUT);
++    }
++
++    private static void config(ObjectMapper objectMapper) {
++        objectMapper.enable(JsonGenerator.Feature.WRITE_BIGDECIMAL_AS_PLAIN);
++        objectMapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
++        objectMapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
++        objectMapper.enable(DeserializationFeature.FAIL_ON_READING_DUP_TREE_KEY);
++        objectMapper.enable(DeserializationFeature.FAIL_ON_NUMBERS_FOR_ENUMS);
++        objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
++        objectMapper.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES);
++        objectMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
++        objectMapper.enable(JsonParser.Feature.ALLOW_COMMENTS);
++        objectMapper.disable(JsonGenerator.Feature.ESCAPE_NON_ASCII);
++        objectMapper.enable(JsonGenerator.Feature.IGNORE_UNKNOWN);
++        objectMapper.enable(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES);
++        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
++        objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
++        objectMapper.enable(JsonParser.Feature.ALLOW_SINGLE_QUOTES);
++        objectMapper.registerModule(new ParameterNamesModule());
++        objectMapper.registerModule(new Jdk8Module());
++        objectMapper.registerModule(new JavaTimeModule());
++        objectMapper.registerModule(new GuavaModule());
++    }
++    public static void setSerializationInclusion(JsonInclude.Include inclusion) {
++        DEFAULT_PROPERTY_INCLUSION = inclusion;
++        configPropertyInclusion();
++    }
++
++    public static void setIndentOutput(boolean isEnable) {
++        IS_ENABLE_INDENT_OUTPUT = isEnable;
++        configIndentOutput();
++    }
++
++    public static <V> V from(URL url, Class<V> c) {
++        try {
++            return mapper.readValue(url, c);
++        } catch (IOException e) {
++            log.error("jackson from error, url: {}, type: {}", url.getPath(), c, e);
++            return null;
++        }
++    }
++
++    public static <V> V from(InputStream inputStream, Class<V> c) {
++        try {
++            return mapper.readValue(inputStream, c);
++        } catch (IOException e) {
++            log.error("jackson from error, type: {}", c, e);
++            return null;
++        }
++    }
++
++    public static <V> V from(File file, Class<V> c) {
++        try {
++            return mapper.readValue(file, c);
++        } catch (IOException e) {
++            log.error("jackson from error, file path: {}, type: {}", file.getPath(), c, e);
++            return null;
++        }
++    }
++
++    public static <V> V from(Object jsonObj, Class<V> c) {
++        try {
++            return mapper.readValue(jsonObj.toString(), c);
++        } catch (IOException e) {
++            log.error("jackson from error, json: {}, type: {}", jsonObj.toString(), c, e);
++            return null;
++        }
++    }
++
++    public static <V> V from(String json, Class<V> c) {
++        try {
++            return mapper.readValue(json, c);
++        } catch (IOException e) {
++            log.error("jackson from error, json: {}, type: {}", json, c, e);
++            return null;
++        }
++    }
++
++    public static <V> V from(URL url, TypeReference<V> type) {
++        try {
++            return mapper.readValue(url, type);
++        } catch (IOException e) {
++            log.error("jackson from error, url: {}, type: {}", url.getPath(), type, e);
++            return null;
++        }
++    }
++
++    public static <V> V from(InputStream inputStream, TypeReference<V> type) {
++        try {
++            return mapper.readValue(inputStream, type);
++        } catch (IOException e) {
++            log.error("jackson from error, type: {}", type, e);
++            return null;
++        }
++    }
++
++    public static <V> V from(File file, TypeReference<V> type) {
++        try {
++            return mapper.readValue(file, type);
++        } catch (IOException e) {
++            log.error("jackson from error, file path: {}, type: {}", file.getPath(), type, e);
++            return null;
++        }
++    }
++
++    public static <V> V from(Object jsonObj, TypeReference<V> type) {
++        try {
++            return mapper.readValue(jsonObj.toString(), type);
++        } catch (IOException e) {
++            log.error("jackson from error, json: {}, type: {}", jsonObj.toString(), type, e);
++            return null;
++        }
++    }
++
++    public static <V> V from(String json, TypeReference<V> type) {
++        try {
++            return mapper.readValue(json, type);
++        } catch (IOException e) {
++            log.error("jackson from error, json: {}, type: {}", json, type, e);
++            return null;
++        }
++    }
++
++    public static <V> String to(List<V> list) {
++        try {
++            return mapper.writeValueAsString(list);
++        } catch (JsonProcessingException e) {
++            log.error("jackson to error, obj: {}", list, e);
++            return null;
++        }
++    }
++
++    public static <V> String to(V v) {
++        try {
++            return mapper.writeValueAsString(v);
++        } catch (JsonProcessingException e) {
++            log.error("jackson to error, obj: {}", v, e);
++            return null;
++        }
++    }
++
++    public static <V> void toFile(String path, List<V> list) {
++        try (Writer writer = new FileWriter(new File(path), true)) {
++            mapper.writer().writeValues(writer).writeAll(list);
++            writer.flush();
++        } catch (Exception e) {
++            log.error("jackson to file error, path: {}, list: {}", path, list, e);
++        }
++    }
++
++    public static <V> void toFile(String path, V v) {
++        try (Writer writer = new FileWriter(new File(path), true)) {
++            mapper.writer().writeValues(writer).write(v);
++            writer.flush();
++        } catch (Exception e) {
++            log.error("jackson to file error, path: {}, obj: {}", path, v, e);
++        }
++    }
++
++    public static String getString(String json, String key) {
++        if (StringUtils.isEmpty(json)) {
++            return null;
++        }
++        try {
++            JsonNode node = mapper.readTree(json);
++            if (null != node) {
++                return node.get(key).toString();
++            } else {
++                return null;
++            }
++        } catch (IOException e) {
++            log.error("jackson get string error, json: {}, key: {}", json, key, e);
++            return null;
++        }
++    }
++
++    public static Integer getInt(String json, String key) {
++        if (StringUtils.isEmpty(json)) {
++            return null;
++        }
++        try {
++            JsonNode node = mapper.readTree(json);
++            if (null != node) {
++                return node.get(key).intValue();
++            } else {
++                return null;
++            }
++        } catch (IOException e) {
++            log.error("jackson get int error, json: {}, key: {}", json, key, e);
++            return null;
++        }
++    }
++
++    public static Long getLong(String json, String key) {
++        if (StringUtils.isEmpty(json)) {
++            return null;
++        }
++        try {
++            JsonNode node = mapper.readTree(json);
++            if (null != node) {
++                return node.get(key).longValue();
++            } else {
++                return null;
++            }
++        } catch (IOException e) {
++            log.error("jackson get long error, json: {}, key: {}", json, key, e);
++            return null;
++        }
++    }
++
++    public static Double getDouble(String json, String key) {
++        if (StringUtils.isEmpty(json)) {
++            return null;
++        }
++        try {
++            JsonNode node = mapper.readTree(json);
++            if (null != node) {
++                return node.get(key).doubleValue();
++            } else {
++                return null;
++            }
++        } catch (IOException e) {
++            log.error("jackson get double error, json: {}, key: {}", json, key, e);
++            return null;
++        }
++    }
++
++    public static BigInteger getBigInteger(String json, String key) {
++        if (StringUtils.isEmpty(json)) {
++            return new BigInteger(String.valueOf(0.00));
++        }
++        try {
++            JsonNode node = mapper.readTree(json);
++            if (null != node) {
++                return node.get(key).bigIntegerValue();
++            } else {
++                return null;
++            }
++        } catch (IOException e) {
++            log.error("jackson get biginteger error, json: {}, key: {}", json, key, e);
++            return null;
++        }
++    }
++
++    public static BigDecimal getBigDecimal(String json, String key) {
++        if (StringUtils.isEmpty(json)) {
++            return null;
++        }
++        try {
++            JsonNode node = mapper.readTree(json);
++            if (null != node) {
++                return node.get(key).decimalValue();
++            } else {
++                return null;
++            }
++        } catch (IOException e) {
++            log.error("jackson get bigdecimal error, json: {}, key: {}", json, key, e);
++            return null;
++        }
++    }
++
++    public static boolean getBoolean(String json, String key) {
++        if (StringUtils.isEmpty(json)) {
++            return false;
++        }
++        try {
++            JsonNode node = mapper.readTree(json);
++            if (null != node) {
++                return node.get(key).booleanValue();
++            } else {
++                return false;
++            }
++        } catch (IOException e) {
++            log.error("jackson get boolean error, json: {}, key: {}", json, key, e);
++            return false;
++        }
++    }
++
++    public static byte[] getByte(String json, String key) {
++        if (StringUtils.isEmpty(json)) {
++            return null;
++        }
++        try {
++            JsonNode node = mapper.readTree(json);
++            if (null != node) {
++                return node.get(key).binaryValue();
++            } else {
++                return null;
++            }
++        } catch (IOException e) {
++            log.error("jackson get byte error, json: {}, key: {}", json, key, e);
++            return null;
++        }
++    }
++
++    public static <T> ArrayList<T> getList(String json, String key) {
++        if (StringUtils.isEmpty(json)) {
++            return null;
++        }
++        String string = getString(json, key);
++        return from(string, new TypeReference<ArrayList<T>>() {});
++    }
++
++    public static <T> String add(String json, String key, T value) {
++        try {
++            JsonNode node = mapper.readTree(json);
++            add(node, key, value);
++            return node.toString();
++        } catch (IOException e) {
++            log.error("jackson add error, json: {}, key: {}, value: {}", json, key, value, e);
++            return json;
++        }
++    }
++
++    private static <T> void add(JsonNode jsonNode, String key, T value) {
++        if (value instanceof String) {
++            ((ObjectNode) jsonNode).put(key, (String) value);
++        } else if (value instanceof Short) {
++            ((ObjectNode) jsonNode).put(key, (Short) value);
++        } else if (value instanceof Integer) {
++            ((ObjectNode) jsonNode).put(key, (Integer) value);
++        } else if (value instanceof Long) {
++            ((ObjectNode) jsonNode).put(key, (Long) value);
++        } else if (value instanceof Float) {
++            ((ObjectNode) jsonNode).put(key, (Float) value);
++        } else if (value instanceof Double) {
++            ((ObjectNode) jsonNode).put(key, (Double) value);
++        } else if (value instanceof BigDecimal) {
++            ((ObjectNode) jsonNode).put(key, (BigDecimal) value);
++        } else if (value instanceof BigInteger) {
++            ((ObjectNode) jsonNode).put(key, (BigInteger) value);
++        } else if (value instanceof Boolean) {
++            ((ObjectNode) jsonNode).put(key, (Boolean) value);
++        } else if (value instanceof byte[]) {
++            ((ObjectNode) jsonNode).put(key, (byte[]) value);
++        } else {
++            ((ObjectNode) jsonNode).put(key, to(value));
++        }
++    }
++
++    public static String remove(String json, String key) {
++        try {
++            JsonNode node = mapper.readTree(json);
++            ((ObjectNode) node).remove(key);
++            return node.toString();
++        } catch (IOException e) {
++            log.error("jackson remove error, json: {}, key: {}", json, key, e);
++            return json;
++        }
++    }
++
++    public static <T> String update(String json, String key, T value) {
++        try {
++            JsonNode node = mapper.readTree(json);
++            ((ObjectNode) node).remove(key);
++            add(node, key, value);
++            return node.toString();
++        } catch (IOException e) {
++            log.error("jackson update error, json: {}, key: {}, value: {}", json, key, value, e);
++            return json;
++        }
++    }
++
++    public static String format(String json) {
++        try {
++            JsonNode node = mapper.readTree(json);
++            return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(node);
++        } catch (IOException e) {
++            log.error("jackson format json error, json: {}", json, e);
++            return json;
++        }
++    }
++
++    public static boolean isJson(String json) {
++        try {
++            mapper.readTree(json);
++            return true;
++        } catch (Exception e) {
++            log.error("jackson check json error, json: {}", json, e);
++            return false;
++        }
++    }
++
++    private static InputStream getResourceStream(String name) {
++        return JsonUtil.class.getClassLoader().getResourceAsStream(name);
++    }
++
++    private static InputStreamReader getResourceReader(InputStream inputStream) {
++        if (null == inputStream) {
++            return null;
++        }
++        return new InputStreamReader(inputStream, StandardCharsets.UTF_8);
++    }
++}
+\ No newline at end of file
